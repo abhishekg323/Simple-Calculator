@@ -47,7 +47,7 @@ public class Calculator extends Frame{
             else if(o.getText().equals("3")){
                 l.setText(l.getText()+"3");
             }
-            else if(o.getText().equals(0)){
+            else if(o.getText().equals("0")){
                 l.setText(l.getText()+"0");
             }
             else if(o.getText().equals("00")){
@@ -61,11 +61,11 @@ public class Calculator extends Frame{
                     n1=Double.parseDouble(l.getText());
                     op=o.getText().charAt(0);
                     l.setText("");
-                    l2.setText(String.valueOf(n1));
+                    l2.setText(String.valueOf(n1)+String.valueOf(op));
                 }
                 else{
                     char ch=o.getText().charAt(0);
-                    switch (ch) {
+                    switch (op) {
                         case '+': n1+=Double.parseDouble(l.getText());
                             op=ch;
                             break;
@@ -79,7 +79,7 @@ public class Calculator extends Frame{
                             op=ch;
                             break;
                     }
-                    l2.setText(String.valueOf(n1));
+                    l2.setText(String.valueOf(n1)+String.valueOf(op));
                     l.setText("");
                 }
             }
